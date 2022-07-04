@@ -13,7 +13,7 @@ Link to Install [JFROG CLI](https://jfrog.com/getcli/) tool.
 ```bash
 curl -u admin:<password> -XGET https://ramkannans.jfrog.io/artifactory/api/system/ping 
 
-jf rt curl -XGET api/system/ping #provided local config us updated using jf c add).
+jf rt curl -XGET api/system/ping #provided local config us updated using jf c add.
 ```
 
 
@@ -41,4 +41,35 @@ jf rt-cleanup clean sample-2-local --time-unit=day --no-dl=3 --server-id=eu
 12:28:38 [🔵Info] [Thread 2] Deleting sample-2-local/avatar_2.jpg
 ```
 
+Delete docker image 
+```
+Create a spec file as dockerage.spec 
+run the cmd to list - jf rt curl -X POST api/search/aql -T dockerage.spec
+```
+
+List and delete release bundle 
+```
+Run aql file -> rb.spec
+jf rt curl -X POST api/search/aql -T rb.spec
+```
+
+Delete Repository - 
+```
+jf rt curl -X DELETE api/repositories/slipway-npm-dev-local
+Repository slipway-npm-dev-local and all its content have been removed successfully.
+```
+
+User Delete - 
+```
+jf rt curl -X DELETE api/security/users/user-to-delete
+The user: 'user-to-delete' has been removed successfully.
+```
+
+Repository Create
+```
+jf rt repo-template template.json
+jf rt repo-create template.json --vars "repo-name=openet-test-2"
+```
+
+Repository configuration details - `jf rt curl -X GET api/repositories/slipway-docker-dev-local`
 
