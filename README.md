@@ -45,7 +45,14 @@ Delete docker image
 ```
 Create a spec file as dockerage.spec 
 run the cmd to list - jf rt curl -X POST api/search/aql -T dockerage.spec
+Finally delete image -> jf rt curl -X DELETE slipway-docker-dev-local/slipway-hello-world/1.0.2225954912
 ```
+
+Docker cleanup with plugin
+Place your plugin files under `$JFROG_HOME/artifactory/var/etc/artifactory/plugins`.
+REST API to reload plugins - `curl -XPOST -uadmin:<password> "http://35.208.78.203:8082/artifactory/api/plugins/reload"`
+Dry run of plugins - `curl -XPOST -uadmin:<password>  "http://35.208.78.203:8081/artifactory/api/plugins/execute/cleanDockerImages?params=dryRun=true"`
+
 
 List and delete release bundle 
 ```

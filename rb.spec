@@ -1,4 +1,4 @@
 releases.find({
-  "name":{"$eq" : "*yann*"}
+  "name":{"$eq" : "yann-test"}
 })
 
