@@ -31,7 +31,7 @@ Create a spec file called test.spec
 run the test.spec using jf curl --> jf rt curl -X POST api/search/aql -T test.spec
 run rt delete to apply the spec file for deleting the results found --> jf rt delete --spec=test.spec
 ```
-<br/>
+
 delete using JFrog CLI Plugin
 ```
 jf plugin install rt-cleanup
@@ -40,14 +40,14 @@ jf rt-cleanup clean sample-2-local --time-unit=day --no-dl=3 --server-id=eu
 12:28:38 [🔵Info] [Thread 0] Deleting sample-2-local/generic-local/avatar_1.jpg
 12:28:38 [🔵Info] [Thread 2] Deleting sample-2-local/avatar_2.jpg
 ```
-<br/>
+
 Delete docker image 
 ```
 Create a spec file as dockerage.spec 
 run the cmd to list - jf rt curl -X POST api/search/aql -T dockerage.spec
 Finally delete image -> jf rt curl -X DELETE slipway-docker-dev-local/slipway-hello-world/1.0.2225954912
 ```
-<br/>
+
 Docker cleanup with plugin <br/>
 Place your plugin files under `$JFROG_HOME/artifactory/var/etc/artifactory/plugins`.<br/>
 REST API to reload plugins - `curl -XPOST -uadmin:<password> "http://35.208.78.203:8082/artifactory/api/plugins/reload"`<br/>
