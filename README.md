@@ -49,9 +49,9 @@ Finally delete image -> jf rt curl -X DELETE slipway-docker-dev-local/slipway-he
 ```
 
 Docker cleanup with plugin <br/>
-Place your plugin files under `$JFROG_HOME/artifactory/var/etc/artifactory/plugins`.<br/>
-REST API to reload plugins - `curl -XPOST -uadmin:<password> "http://35.208.78.203:8082/artifactory/api/plugins/reload"`<br/>
-Dry run of plugins - `curl -XPOST -uadmin:<password>  "http://35.208.78.203:8081/artifactory/api/plugins/execute/cleanDockerImages?params=dryRun=true"`<br/>
+* Place your plugin files under `$JFROG_HOME/artifactory/var/etc/artifactory/plugins`.<br/>
+* REST API to reload plugins - `curl -XPOST -uadmin:<password> "http://35.208.78.203:8082/artifactory/api/plugins/reload"`<br/>
+* Dry run of plugins - `curl -XPOST -uadmin:<password>  "http://35.208.78.203:8081/artifactory/api/plugins/execute/cleanDockerImages?params=dryRun=true"`<br/>
 
 
 List and delete release bundle 
