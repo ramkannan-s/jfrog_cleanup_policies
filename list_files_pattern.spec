@@ -4,19 +4,16 @@
       "aql": {
         "items.find" : {
           "repo": "example-repo-local",
-          "created": {"$last" : "10d"},
+          "created": {"$before" : "10d"},
           "stat.downloads": {"$eq" : null}
 	   }
       }
     },
     {
-      "pattern": "slipway-hello-world/1.0.1",
-      "target" : "slipway-docker-dev-local"
+      "pattern": "slipway-docker-dev-local/slipway-hello-world/1.0.1/"
     },
     {
-      "pattern": "rabbit",
-      "target": "example-repo-local"
+      "pattern": "example-repo-local/rabbit/"
     }
   ]
 }
-
